@@ -17,12 +17,12 @@
 package main
 
 import (
-	"flag"
 	"log"
 	"os"
 	"path/filepath"
 	"strings"
 
+	flag "github.com/ogier/pflag"
 	"github.com/seehuhn/epublatex/epub"
 	"github.com/seehuhn/epublatex/latex"
 )
@@ -31,7 +31,6 @@ var output = flag.String("output", "", "the output file name")
 var html = flag.Bool("html", false, "generate HTML instead of EPUB")
 
 func main() {
-	log.Println("start")
 	flag.Parse()
 
 	if flag.NArg() != 1 {
